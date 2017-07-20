@@ -8,15 +8,22 @@ export default class extends Phaser.Sprite {
         
         this.body.bounce.y = 0.2;
         this.body.collideWorldBounds = true;
-        this.body.gravity.y = 400;
+        this.body.gravity.y = 1800;
+        this.cursors = null;
         this.populateEvents();
     }
     populateEvents(){
-        var cursors = this.game.input.keyboard.createCursorKeys();
-        console.log(cursors);
-        debugger;
+        this.cursors = this.game.input.keyboard.createCursorKeys();
+        // debugger;
     }
     update() {
-        // this.y += 2 ;
+        // debugger;
+        if(this.cursors.up.isDown){
+            this.body.velocity.y -= 150;
+            this.body.angularAcceleration = -55;
+        }
+        if(this.cursors.down.isDown){
+            this.body.angularAcceleration = 55;
+        }
     }
 }

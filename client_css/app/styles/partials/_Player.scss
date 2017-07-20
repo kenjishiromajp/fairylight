@@ -1,0 +1,33 @@
+@keyframes wingTop{
+    0%{transform: rotate(-2deg);}
+    50%{transform: rotate(20deg);}
+    100%{transform: rotate(-2deg);}
+}
+
+#Player{
+    width: 15vw;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    .wing{
+        fill: #fff;
+        &.-back{
+            fill: #deebff;
+        }
+        &.-big{
+            animation: wingTop 1s 0s ease-in-out infinite alternate;
+            transform-origin: bottom right;
+        }
+        &.-small{
+            animation: wingTop 1s 0.5s ease-in-out infinite alternate;
+            transform-origin: top right;
+        }
+    }
+
+    .body{
+        fill: #00c6d9;
+    }
+    .body-inner{
+        fill: #31f1d9;
+    }
+}

@@ -1,0 +1,57 @@
+body{
+    background: url('../../assets/imgs/Background.svg');
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes backgroundPosition{
+    0%{
+        background-position: 0px;
+    }
+    100%{
+        background-position: -256px;
+    }
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    &.-align-center{
+        align-items: center;
+    }
+    &.-justify-center{
+        justify-content: center;
+    }
+}
+.screen{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    &.active{
+        z-index: 10;
+    }
+}
+
+#game{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    &::before{
+        content: "";
+        width: 100%;
+        height: 66px;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        background: url("../../assets/imgs/FrontBackground.svg") repeat;
+        background-size: 256px 66px;
+        animation: backgroundPosition 1s infinite linear;
+    }
+}
+
+@import "./partials/_Player.scss";
