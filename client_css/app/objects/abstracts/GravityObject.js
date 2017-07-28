@@ -20,4 +20,25 @@ export default class GravityObject extends Drawable{
         this.game.objects.splice(index,1);
         this.$el.remove();
     }
+    isCollidedWith(obj){
+        if(!obj instanceof Drawable)
+            throw new Error("You must to pass a Drawable/Gravity object");
+        if(this == obj)
+            return false;
+
+        let a = {
+            y1: this.y,
+            y2: this.y + this.height,
+            x1: this.x,
+            x2: this.x + this.width,
+        };
+        let b = {
+            y1: obj.y,
+            y2: obj.y + obj.height,
+            x1: obj.x,
+            x2: obj.x + obj.width,
+        };
+        // debugger;
+        return !((a.x1 > b.x2 || a.x2 < b.x1) || (a.y1 > b.y2 || a.y2 < b.y1));
+    }
 }

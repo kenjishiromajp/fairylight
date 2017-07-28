@@ -41,16 +41,22 @@ export default class Player extends GravityObject {
     update() {
         super.update();
         this.calculateLuminosityPower();
-
-        this.stepY -= this.luminosityPower;
-
-        this.stepY = (this.stepY > this.maxStepY)? this.maxStepY : this.stepY;
-        this.stepY = (this.stepY < this.minStepY)? this.minStepY : this.stepY;
-
-        this.y = (this.y < 0)? 0: this.y;
-
+        this.y = 100;
         this.angle = this.stepY * 1.7;
-        this.died = this.hitTheCorner();
+
+        if(this.ifCollidedWithEnemies() || this.hitTheCorner())
+            this.died = true;
+
+    }
+    ifCollidedWithEnemies(){
+        let collided = false;
+        for (let i = 0; i < this.game.objects.length; i++) {
+            let obj = this.game.objects[i];
+            if(this.isCollidedWith(obj)){
+                collided = true;
+            }
+        }
+        return collided;
     }
     draw(){
         super.draw();
@@ -61,7 +67,7 @@ export default class Player extends GravityObject {
         const maxLux = 800;
         const minLux = 400;
         const diff = maxLux - minLux;
-        var luxIntensityPercentage = (this.game.luminosity - minLux) / diff;
+        let luxIntensityPercentage = (this.game.luminosity - minLux) / diff;
         // luxIntensityPercentage -= 0.5;
         // luxIntensityPercentage *= 2;
         
