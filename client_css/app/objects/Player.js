@@ -1,11 +1,15 @@
 import GravityObject from "./abstracts/GravityObject";
+import PlayerSVG from "!raw-loader!../../assets/imgs/Player.svg";
+
+const dp = new DOMParser();
 
 export default class Player extends GravityObject {
-    constructor($el,game) {
+    constructor(game) {
         const gravity = 0.8;
-        super(gravity);
+        let $el = dp.parseFromString(PlayerSVG,"text/html").querySelector("body").children[0];
+
+        super(gravity,$el,0,5);
         this.game = game;
-        this.$el = $el;
         this.$body = null;
         this.height = null;
         this.width = null;
@@ -16,17 +20,16 @@ export default class Player extends GravityObject {
         this.y = 300;
         this.maxStepY = 20;
         this.minStepY = -20;
-        this.stepX = 0;
-        this.stepY = -5;
 
         this.preparePlayer();
     }
     preparePlayer() {
+        this.game.$ingame.appendChild(this.$el);
         this.$body = this.$el.querySelector(".body");
         
         const compensation_x = parseInt(this.$body.getBoundingClientRect().left) - parseInt(this.$el.getBoundingClientRect().left);
         const compensation_y = parseInt(this.$body.getBoundingClientRect().top) - parseInt(this.$el.getBoundingClientRect().top);
-        
+
         this.height = parseInt(this.$body.getBoundingClientRect().height);
         this.width = parseInt(this.$body.getBoundingClientRect().width);
 
@@ -43,6 +46,7 @@ export default class Player extends GravityObject {
 
         this.stepY = (this.stepY > this.maxStepY)? this.maxStepY : this.stepY;
         this.stepY = (this.stepY < this.minStepY)? this.minStepY : this.stepY;
+
         this.y = (this.y < 0)? 0: this.y;
 
         this.angle = this.stepY * 1.7;
