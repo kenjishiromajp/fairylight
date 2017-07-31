@@ -14,10 +14,8 @@ export default class extends Phaser.Sprite {
     }
     populateEvents(){
         this.cursors = this.game.input.keyboard.createCursorKeys();
-        // debugger;
     }
     update() {
-        // debugger;
         if(this.cursors.up.isDown){
             this.body.velocity.y -= 150;
             this.body.angularAcceleration = -55;

@@ -48,6 +48,7 @@ export default class Game {
         this.player = new Player(this);
         this.player.draw();
         this.frames = 0;
+        this.createEnemyRateFrame = 260;
         this.initTime= null;
         this.enemySpeed = -3;
         

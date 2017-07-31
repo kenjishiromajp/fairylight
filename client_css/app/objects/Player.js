@@ -38,10 +38,26 @@ export default class Player extends GravityObject {
         
         this.draw();
     }
+    calculateWingsFlappy(){
+        let $wings = this.$el.querySelectorAll(".wing");
+        let seconds = 1.2 - this.luminosityPower;
+        seconds = (seconds >= 1.2)? 0: seconds;
+
+        for (var i = 0; i < $wings.length; i++) {
+            var $w = $wings[i];
+            $w.style.animationDuration = `${seconds}s`;
+        }
+    }
     update() {
         super.update();
         this.calculateLuminosityPower();
-        this.y = 100;
+        this.calculateWingsFlappy();
+
+        this.stepY -= (this.luminosityPower * 1.4);
+        this.stepY = (this.stepY > this.maxStepY)? this.maxStepY : this.stepY;		
+        this.stepY = (this.stepY < this.minStepY)? this.minStepY : this.stepY;		
+        this.y = (this.y < 0)? 0: this.y;
+
         this.angle = this.stepY * 1.7;
 
         if(this.ifCollidedWithEnemies() || this.hitTheCorner())
@@ -68,11 +84,10 @@ export default class Player extends GravityObject {
         const minLux = 400;
         const diff = maxLux - minLux;
         let luxIntensityPercentage = (this.game.luminosity - minLux) / diff;
-        // luxIntensityPercentage -= 0.5;
-        // luxIntensityPercentage *= 2;
-        
-        const luxIntensity = luxIntensityPercentage * 1.4;
-        this.luminosityPower = luxIntensity;
+        // TEST
+        // let luxIntensityPercentage = (650 - minLux) / diff;
+
+        this.luminosityPower = luxIntensityPercentage;
     }
     hitTheCorner(){
         return (this.y+this.height) >  this.game.$el.offsetHeight;
