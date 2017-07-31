@@ -2,7 +2,10 @@
 
 > Jogo Arcade simples feito com Javascript!.
 
-<a href="#"><img width="728" src="https://github.com/kenjishiromajp/flappylight/blob/master/img/imagem_fundo.svg" alt="Flappy Light"></a>
+
+
+
+<a href="#"><img width="728" src="https://raw.githubusercontent.com/kenjishiromajp/flappylight/master/imgs/imagem_fundo.png" alt="Flappy Light" /></a>
 
 ## Intalação
 
