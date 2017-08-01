@@ -7,7 +7,7 @@
 
 <a href="#"><img width="728" src="https://raw.githubusercontent.com/kenjishiromajp/flappylight/master/imgs/imagem_fundo.png" alt="Flappy Light" /></a>
 
-## Intalação
+## Instalação
 
  Instale o node-red utilizando o comando
 

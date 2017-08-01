@@ -1,0 +1,35 @@
+[33mcommit 67f6b70da27fee6f8d988d12c9eaf25782688ba5[m
+Author: Kenji Shiroma <kenjishiromajp@gmail.com>
+Date:   Mon Jul 31 20:33:30 2017 -0300
+
+    Adicionando animação extra
+
+[33mcommit 57706af45452fc5d74110a925869752dce57b286[m
+Author: Kenji Shiroma <kenjishiromajp@gmail.com>
+Date:   Fri Jul 28 19:26:59 2017 -0300
+
+    Finalizando a colisao
+
+[33mcommit cf00c6bb1daf02bc4755858f89f1ac1ffd409829[m
+Author: Kenji Shiroma <kenjishiromajp@gmail.com>
+Date:   Thu Jul 27 21:26:11 2017 -0300
+
+    adicionando evento ao botao start
+
+[33mcommit 4e76e3bf895217e682c05903c07537ecc5e77a7c[m
+Author: Kenji Shiroma <kenjishiromajp@gmail.com>
+Date:   Thu Jul 20 20:13:28 2017 -0300
+
+    Player Batendo as asas
+
+[33mcommit 661d262a7eefbeae9dbebc8fc4283d48b3eaeb19[m
+Author: Kenji Shiroma <kenjishiromajp@gmail.com>
+Date:   Mon Jul 17 20:50:45 2017 -0300
+
+    Adding the gravity and initialState
+
+[33mcommit d6c7b10048f3ceacd121d7713af91b66d705311a[m
+Author: Kenji Shiroma <kenjishiromajp@gmail.com>
+Date:   Mon Jul 17 18:47:15 2017 -0300
+
+    Starting a Project

@@ -38,20 +38,20 @@ export default class Player extends GravityObject {
         
         this.draw();
     }
-    calculateWingsFlappy(){
-        let $wings = this.$el.querySelectorAll(".wing");
-        let seconds = 1.2 - this.luminosityPower;
-        seconds = (seconds >= 1.2)? 0: seconds;
+    // calculateWingsFlappy(){
+    //     let $wings = this.$el.querySelectorAll(".wing");
+    //     let seconds = 3 - this.luminosityPower;
+    //     seconds = (seconds >= 3)? 0: seconds;
 
-        for (var i = 0; i < $wings.length; i++) {
-            var $w = $wings[i];
-            $w.style.animationDuration = `${seconds}s`;
-        }
-    }
+    //     for (var i = 0; i < $wings.length; i++) {
+    //         var $w = $wings[i];
+    //         $w.style.animationDuration = `${seconds}s`;
+    //     }
+    // }
     update() {
         super.update();
         this.calculateLuminosityPower();
-        this.calculateWingsFlappy();
+        // this.calculateWingsFlappy();
 
         this.stepY -= (this.luminosityPower * 1.4);
         this.stepY = (this.stepY > this.maxStepY)? this.maxStepY : this.stepY;		
