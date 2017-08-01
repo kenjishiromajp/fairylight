@@ -2,10 +2,18 @@
 
 > Jogo Arcade simples feito com Javascript!.
 
-
-
-
 <a href="#"><img width="728" src="https://raw.githubusercontent.com/kenjishiromajp/flappylight/master/imgs/imagem_fundo.png" alt="Flappy Light" /></a>
+
+### OBJETIVO DO JOGO
+Você deve controlar a fada azul com a força da luz para desviar dos inimigos roxos.
+
+<a href="#"><img width="728" src="https://raw.githubusercontent.com/kenjishiromajp/flappylight/master/imgs/imagem_instrucao.png" alt="Instruções sobre o jogo" /></a>
+
+Você deve controlar a entrada de luz do seu **LDR 5mm** para controlar a fada.
+
+Quanto mais luz ela recebe ela vai mais para cima, sem a luz a mesma vai perdendo a força e indo para baixo.
+
+Desta forma você deve desviar dos inimigos e sobreviver por mais tempo!
 
 ## Instalação
 
